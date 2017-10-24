@@ -1,13 +1,14 @@
-<h3>List of products</h3>
-<a href="#!/products/new">Create a new product </a>
+<br><br><br><br>
+<h3>Seus Livros Cadastrados</h3>
+<a href="#!/products/new">Adicionar Livro</a>
 <table>
     <thead>
         <tr>
             <td>Id</td>
-            <td>Name</td>
-            <td>Price</td>
+            <td>Nome</td>
+            <td>Preço</td>
             <td>Quantity</td>
-            <td>Actions</td>
+            <td>Opções</td>
         </tr>
     </thead>
     <tbody>
@@ -16,8 +17,8 @@
             <td>{{product.name}}</td>
             <td>{{product.price}}</td>
             <td>{{product.quantity}}</td>
-            <td><button type="button" data-ng-click="remove(product.id)">Delete</button></td>
-            <td><button type="button" data-ng-click="edit(product.id)">Edit</button></td>
+            <td><button type="button" data-ng-click="remove(product.id)">Deletar</button></td>
+            <td><button type="button" data-ng-click="edit(product.id)">Editar</button></td>
         </tr>
     </tbody>
 </table>

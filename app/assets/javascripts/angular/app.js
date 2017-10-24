@@ -53,7 +53,7 @@ angular
         });
 
         $scope.remove  = function(id) {
-            if (confirm('Are you sure?')) {
+            if (confirm('Você tem certeza?')) {
                 Product.delete({ id: id }).$promise.then(function(data) {
                     Products.query().$promise.then(function(products) {
                         $scope.products = products;

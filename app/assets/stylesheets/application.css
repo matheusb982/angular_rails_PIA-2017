@@ -10,6 +10,29 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
+ *= require bootstrap
+ *= require font-awesome
  *= require_tree .
  *= require_self
  */
+
+ .custom-menu{
+   text-align: center;
+ }
+
+ footer {
+     position: fixed;
+     bottom: 0;
+ }
+
+section{
+  padding-top: 140px !important;
+}
+
+.button-inline > form{
+  display: inline;
+}
+
+.form-control-custom{
+  background-color: #e96840 !important;
+}

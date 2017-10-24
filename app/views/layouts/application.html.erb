@@ -1,15 +1,29 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>RailsAngular</title>
+  <title>FriendBook</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
+<!-- <body data-ng-app="app"> -->
 <body data-ng-app="app">
-    <div class="container" data-ng-view>
-        <%= yield %>
-    </div>
+  <%= render "shared/menu"%>
+
+  <div class="" data-ng-view>
+    <%= yield %>
+  </div>
+  
+  <%= render "shared/footer"%>
+  <%= javascript_include_tag "application" %>
+
+<!-- Google Map -->
+
+<script type="text/javascript">
+
+    <%= yield :javascripts %>
+
+</script>
 
 </body>
 </html>

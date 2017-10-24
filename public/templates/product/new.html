@@ -1,7 +1,50 @@
-<h3>Create a new product </h3>
-<form novalidate>
-    <input type="text" name="name" data-ng-model="form.name">
-    <input type="number" name="quantity" data-ng-model="form.quantity">
-    <input type="text" name="price" data-ng-model="form.price">
-    <button type="button" data-ng-click="create(form)">Create</button>
-</form>
+<br><br><br><br>
+
+<div class="container">
+  <h3>Adicionar Livro </h3><br>
+
+  <div>
+    <form novalidate>
+      <label for="fname">Nome</label>
+      <input type="text" name="name" data-ng-model="form.name">
+
+      <label for="fname">Quantidade</label>
+      <input type="text" name="quantity" data-ng-model="form.quantity">
+
+      <label for="fname">Valor</label>
+      <input type="text" name="price" data-ng-model="form.price">
+
+      <div class="button-pending">
+        <button class="button" type="button" data-ng-click="create(form)">Salvar Livro</button>
+      </div>
+
+    </form>
+  </div>
+</div>
+
+<style>
+  input[type=text], select {
+      width: 100%;
+      padding: 12px 20px;
+      margin: 9px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+  }
+
+  .button {
+    background-color: #E96840;
+    border: none;
+    color: white;
+    padding: 15px 145px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 18px;
+  }
+
+  .button-pending {
+    text-align:center;
+  }
+</style>

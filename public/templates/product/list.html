@@ -13,6 +13,7 @@
         <th>Nome</th>
         <th>Nº Páginas</th>
         <th>Área</th>
+        <th>Status</th>
         <th></th>
       </tr>
       <tr data-ng-repeat="product in products">
@@ -20,6 +21,7 @@
           <td>{{product.name}}</td>
           <td>{{product.price}}</td>
           <td>{{product.quantity}}</td>
+          <td>{{product.status}}</td>
           <td><button type="button" data-ng-click="remove(product.id)">Deletar</button> |
             <button type="button" data-ng-click="edit(product.id)">Editar</button></td>
       </tr>

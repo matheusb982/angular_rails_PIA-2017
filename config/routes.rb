@@ -9,5 +9,7 @@ Rails.application.routes.draw do
 
   resources :products#, :except => [:show]
   get 'list_all' => 'products#list_all'
+  get 'my_list' => 'products#my_list'
+  get 'rent/:id' => 'products#rent'
 
 end

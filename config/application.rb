@@ -8,6 +8,8 @@ Bundler.require(*Rails.groups)
 
 module AngularRails
   class Application < Rails::Application
+    config.serve_static_assets = true
+
     config.generators do |generate|
       generate.helper false
       generate.assets false

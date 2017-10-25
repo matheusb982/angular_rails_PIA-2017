@@ -50,6 +50,9 @@ gem 'inherited_resources'
 
 gem 'simple_form'
 
+gem 'heroku_secrets', github: 'alexpeattie/heroku_secrets'
+
+gem 'rails_12factor', group: :production
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

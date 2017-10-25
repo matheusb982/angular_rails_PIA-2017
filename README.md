@@ -8,4 +8,4 @@ Tecnologias utilizadas:
 * PostgreSQL
 * angularjs-rails
 
-Online Application: https://limitless-coast-41903.herokuapp.com/#!/
+Online Application: <a href="https://limitless-coast-41903.herokuapp.com/#!/" target="_blank">https://limitless-coast-41903.herokuapp.com/#!/</a>

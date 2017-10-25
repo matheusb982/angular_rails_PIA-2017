@@ -208,6 +208,7 @@ DEPENDENCIES
   bootstrap
   byebug
   coffee-rails (~> 4.2)
+  devise
   devise-i18n
   font-awesome-rails
   i18n_alchemy

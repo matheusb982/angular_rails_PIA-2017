@@ -8,6 +8,14 @@ class ProductsController < ApplicationController
         end
     end
 
+    def list_all
+      @products = Product.all
+
+      respond_to do |format|
+          format.json { render json: @products }
+      end
+    end
+
     def show
         @product = Product.find(params[:id])
 

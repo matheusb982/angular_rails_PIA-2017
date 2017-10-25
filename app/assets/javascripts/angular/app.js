@@ -21,6 +21,10 @@ angular
                 templateUrl: '/templates/product/list.html',
                 controller: 'ProductListCtrl'
             })
+            .when('/products/list_all', {
+                templateUrl: '/templates/product/list_all.html',
+                controller: 'ProductListAllCtrl'
+            })
             .when('/products/:id', {
                 templateUrl: '/templates/product/edit.html',
                 controller: 'ProductEditCtrl'
@@ -65,6 +69,14 @@ angular
         $scope.edit = function(id) {
             return $location.path('products/' + id);
         }
+    }])
+    .controller('ProductListAllCtrl', ['$scope', 'Products', 'Product', '$location', function($scope, Products, Product, $location){
+        $scope.products = [];
+
+        Products.query().$promise.then(function(data) {
+            $scope.products = data;
+        });
+        
     }])
     .controller('ProductEditCtrl', ['$scope', 'Product', '$routeParams', '$location', function($scope, Product, $routeParams, $location){
         $scope.product = Product.get({ id: $routeParams.id });

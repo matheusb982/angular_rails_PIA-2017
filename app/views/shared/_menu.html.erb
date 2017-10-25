@@ -11,8 +11,15 @@
 		</div>
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav navbar-right custom-menu">
-				<li><a href="#!/">Home</a></li>
-				<li><a href="#!/products/">Livros</a></li>
+				<li><a href="/">Home</a></li>
+				<li><a href="#!/products/list_all/">Livros Disponíveis</a></li>
+				<% if current_user %>
+					<li><a href="#!/products/">Meus Livros</a></li>
+					<li><%= link_to "Sair", destroy_user_session_path, :method => :delete %></li>
+				<% else %>
+					<li><%= link_to "Acessar", new_user_session_path, {:style=>'border: solid;'} %></li>
+					<li><%= link_to "Registre-se", new_user_registration_path, {:style=>'border: solid;'} %></li>
+				<% end %>
 			</ul>
 		</div>
 	</div>

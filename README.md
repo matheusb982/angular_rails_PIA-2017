@@ -1,4 +1,4 @@
-# Projeto de PIA
+# Projeto de PIA - Friend Book
 Projeto desenvolvido para aprender a integração do front-end com Angular e back-end com Ruby on Rails.
 
 Tecnologias utilizadas:

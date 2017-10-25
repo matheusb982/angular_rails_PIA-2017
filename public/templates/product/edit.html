@@ -8,11 +8,16 @@
       <label for="fname">Nome</label>
       <input type="text" name="name" data-ng-model="product.name">
 
-      <label for="fname">Quantidade</label>
-      <input type="text" name="quantity" data-ng-model="product.quantity">
-
-      <label for="fname">Valor</label>
+      <label for="fname">Nº Páginas</label>
       <input type="text" name="price" data-ng-model="product.price">
+
+      <label for="fname">Área</label>
+      <select name="quantity" data-ng-model="product.quantity">
+        <option value="Administração">Administração</option>
+        <option value="Ciências Contábeis">Ciências Contábeis</option>
+        <option value="Ciências da Computação">Ciências da Computação</option>
+        <option value="Direito">Direito</option>
+      </select><br>
 
       <div class="button-pending">
         <button class="button" type="button" data-ng-click="update(product)">Slavar Alterações</button>

@@ -70,13 +70,13 @@ angular
             return $location.path('products/' + id);
         }
     }])
-    .controller('ProductListAllCtrl', ['$scope', 'Products', 'Product', '$location', function($scope, Products, Product, $location){
+    .controller('ProductListAllCtrl', ['$scope', 'Productsall', function($scope, Products){
         $scope.products = [];
 
         Products.query().$promise.then(function(data) {
             $scope.products = data;
         });
-        
+
     }])
     .controller('ProductEditCtrl', ['$scope', 'Product', '$routeParams', '$location', function($scope, Product, $routeParams, $location){
         $scope.product = Product.get({ id: $routeParams.id });
@@ -91,6 +91,11 @@ angular
     .factory('Products', ['$resource', function($resource){
         return $resource('/products.json', {}, {
             create: { method: 'POST' },
+            query:  { method: 'GET', isArray: true }
+        })
+    }])
+    .factory('Productsall', ['$resource', function($resource){
+        return $resource('/list_all.json', {}, {
             query:  { method: 'GET', isArray: true }
         })
     }])

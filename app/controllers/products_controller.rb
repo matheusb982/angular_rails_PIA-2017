@@ -1,7 +1,8 @@
 class ProductsController < ApplicationController
 
     def index
-        @products = Product.all
+        @products = Product.where(user_id: current_user.id)
+        update_list
 
         respond_to do |format|
             format.json { render json: @products }
@@ -17,7 +18,7 @@ class ProductsController < ApplicationController
     end
 
     def show
-        @product = Product.find(params[:id])
+        @product = Product.find(id)
 
         respond_to do |format|
             format.json { render json: @product }
@@ -54,8 +55,17 @@ class ProductsController < ApplicationController
         end
     end
 
+    def update_list
+      products = Product.where(user_id: nil)
+
+      products.each do |product|
+        product.user_id = current_user.id
+        product.save
+      end
+    end
+
     private
         def product_params
-            params.require(:product).permit(:name, :price, :quantity)
+            params.require(:product).permit(:name, :price, :quantity, :user_id)
         end
 end

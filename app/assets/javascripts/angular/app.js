@@ -92,6 +92,15 @@ angular
     .controller('ProductListAllCtrl', ['$scope', 'Productsall', function($scope, Products){
         $scope.products = [];
 
+        $scope.IsLoading = function(status) {
+          if (status == 'Indisponivel') {
+            return false;
+          }else {
+            return true;
+          }
+
+        }
+
         Products.query().$promise.then(function(data) {
             $scope.products = data;
         });

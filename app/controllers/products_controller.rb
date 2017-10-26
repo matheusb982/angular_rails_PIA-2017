@@ -10,7 +10,7 @@ class ProductsController < ApplicationController
     end
 
     def list_all
-      @products = Product.where(status: 'Disponível')
+      @products = Product.all
 
       respond_to do |format|
           format.json { render json: @products }

@@ -1,4 +1,5 @@
 # Projeto de PIA - Friend Book
+![alt text](https://github.com/matheusb982/angular_rails_PIA-2017/blob/master/app/assets/images/f.png)
 Projeto desenvolvido para aprender a integração do front-end com Angular e back-end com Ruby on Rails.
 
 Tecnologias utilizadas:
@@ -8,4 +9,4 @@ Tecnologias utilizadas:
 * PostgreSQL
 * angularjs-rails
 
-Online Application: <a href="https://limitless-coast-41903.herokuapp.com/#!/" target="_blank">https://limitless-coast-41903.herokuapp.com/#!/</a>
+Online Application: <a href="https://damp-gorge-34981.herokuapp.com/#!/" target="_blank">https://damp-gorge-34981.herokuapp.com/</a>

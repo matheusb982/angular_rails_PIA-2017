@@ -8,4 +8,4 @@ Tecnologias utilizadas:
 * PostgreSQL
 * angularjs-rails
 
-Online Application: <a href="https://enigmatic-dawn-72150.herokuapp.com/#!/" target="_blank">https://enigmatic-dawn-72150.herokuapp.com/#!/</a>
+Online Application: <a href="https://limitless-coast-41903.herokuapp.com/#!/" target="_blank">https://limitless-coast-41903.herokuapp.com/#!/</a>

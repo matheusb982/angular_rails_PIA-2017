@@ -11,6 +11,7 @@
          <th>Nome</th>
          <th>Nº Páginas</th>
          <th>Área</th>
+         <th>Devolução</th>
          <th></th>
        </tr>
        <tr data-ng-repeat="product in products">
@@ -18,6 +19,7 @@
            <td>{{product.name}}</td>
            <td>{{product.price}}</td>
            <td>{{product.quantity}}</td>
+           <td>{{product.date_reserve}}</td>
            <td>RESERVADO </td>
        </tr>
      </table>

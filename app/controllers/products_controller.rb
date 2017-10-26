@@ -29,10 +29,12 @@ class ProductsController < ApplicationController
        @product = Product.find(params[:id])
 
        if current_user
+         value = @product.price / 2
+
          @product.status = 'Indisponivel'
          @product.reserve_id = current_user.id
+         @product.date_reserve = Time.now.strftime("%d/%m/%Y").to_date + value.to_i.days
          @product.save
-
        end
 
        respond_to do |format|
@@ -89,6 +91,6 @@ class ProductsController < ApplicationController
 
     private
         def product_params
-            params.require(:product).permit(:name, :price, :quantity, :user_id, :reserve_id, :status)
+            params.require(:product).permit(:name, :price, :quantity, :user_id, :reserve_id, :status, :date_reserve)
         end
 end

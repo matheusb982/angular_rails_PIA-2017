@@ -24,8 +24,14 @@
           <td>{{product.quantity}}</td>
           <td>{{product.status}}</td>
           <td>{{product.date_reserve}}</td>
-          <td><button type="button" data-ng-click="remove(product.id)">Deletar</button> |
-            <button type="button" data-ng-click="edit(product.id)">Editar</button></td>
+          <td>
+            <span ng-if="IsLoading(product.status)">
+              <button type="button" data-ng-click="remove(product.id)">
+                Deletar
+              </button> |
+              <button type="button" data-ng-click="edit(product.id)">Editar</button>
+            </span>
+          </td>
       </tr>
     </table>
   </div>

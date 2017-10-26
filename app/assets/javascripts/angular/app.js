@@ -60,6 +60,17 @@ angular
     .controller('ProductListCtrl', ['$scope', 'Products', 'Product', '$location', function($scope, Products, Product, $location){
         $scope.products = [];
 
+        // $scope.IsLoading = false;
+
+        $scope.IsLoading = function(status) {
+          if (status == 'Indisponivel') {
+            return false;
+          }else {
+            return true;
+          }
+
+        }
+
         Products.query().$promise.then(function(data) {
             $scope.products = data;
         });

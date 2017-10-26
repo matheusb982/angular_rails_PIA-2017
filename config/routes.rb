@@ -8,6 +8,11 @@ Rails.application.routes.draw do
   get 'hello' => 'home#hello'
 
   resources :products#, :except => [:show]
+
   get 'list_all' => 'products#list_all'
+
+  get 'my_list' => 'products#my_list'
+
+  get 'rent/:id' => 'products#rent'
 
 end

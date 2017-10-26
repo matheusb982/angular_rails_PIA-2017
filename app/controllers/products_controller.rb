@@ -10,12 +10,35 @@ class ProductsController < ApplicationController
     end
 
     def list_all
-      @products = Product.all
+      @products = Product.where(status: 'Disponível')
 
       respond_to do |format|
           format.json { render json: @products }
       end
     end
+
+    def my_list
+      @products = Product.where(status: 'Indisponivel').where(reserve_id: current_user.id)
+
+      respond_to do |format|
+          format.json { render json: @products }
+      end
+    end
+
+    def rent
+       @product = Product.find(params[:id])
+
+       if current_user
+         @product.status = 'Indisponivel'
+         @product.reserve_id = current_user.id
+         @product.save
+
+       end
+
+       respond_to do |format|
+           format.json { render json: @product }
+       end
+     end
 
     def show
         @product = Product.find(params[:id])

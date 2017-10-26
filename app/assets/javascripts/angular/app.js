@@ -25,17 +25,9 @@ angular
                 templateUrl: '/templates/product/list_all.html',
                 controller: 'ProductListAllCtrl'
             })
-            .when('/products/my_list', {
-                templateUrl: '/templates/product/my_list.html',
-                controller: 'ProductListMyCtrl'
-            })
             .when('/products/:id', {
                 templateUrl: '/templates/product/edit.html',
                 controller: 'ProductEditCtrl'
-            })
-            .when('/rent/:id', {
-                templateUrl: '/templates/product/rent.html',
-                controller: 'ProductRentCtrl'
             })
     }])
     .controller('HomeCtrl', ['$scope', 'Home', function($scope, Home){
@@ -86,14 +78,6 @@ angular
         });
 
     }])
-    .controller('ProductListMyCtrl', ['$scope', 'Productsmy', function($scope, Products){
-        $scope.products = [];
-
-        Products.query().$promise.then(function(data) {
-            $scope.products = data;
-        });
-
-    }])
     .controller('ProductEditCtrl', ['$scope', 'Product', '$routeParams', '$location', function($scope, Product, $routeParams, $location){
         $scope.product = Product.get({ id: $routeParams.id });
 
@@ -102,12 +86,6 @@ angular
                 $location.path('/products');
             });
         }
-
-    }])
-    .controller('ProductRentCtrl', ['$scope', 'Productrent', '$routeParams', '$location', function($scope, Product, $routeParams, $location){
-        $scope.product = Product.get({ id: $routeParams.id });
-
-        $location.path('/products/list_all');
 
     }])
     .factory('Products', ['$resource', function($resource){
@@ -121,19 +99,8 @@ angular
             query:  { method: 'GET', isArray: true }
         })
     }])
-    .factory('Productsmy', ['$resource', function($resource){
-        return $resource('/my_list.json', {}, {
-            query:  { method: 'GET', isArray: true }
-        })
-    }])
     .factory('Product', ['$resource', function($resource){
         return $resource('/products/:id.json', {}, {
-            update: { method: 'PUT', params: { id: '@id' } },
-            delete: { method: 'DELETE', params: { id: '@id' } }
-        });
-    }])
-    .factory('Productrent', ['$resource', function($resource){
-        return $resource('/rent/:id.json', {}, {
             update: { method: 'PUT', params: { id: '@id' } },
             delete: { method: 'DELETE', params: { id: '@id' } }
         });

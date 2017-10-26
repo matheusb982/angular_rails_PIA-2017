@@ -10,15 +10,7 @@ class ProductsController < ApplicationController
     end
 
     def list_all
-      @products = Product.where(status: 'Não Reservado')
-
-      respond_to do |format|
-          format.json { render json: @products }
-      end
-    end
-
-    def my_list
-      @products = Product.where(status: 'Reservado').where(reserve_id: current_user.id)
+      @products = Product.all
 
       respond_to do |format|
           format.json { render json: @products }
@@ -72,24 +64,8 @@ class ProductsController < ApplicationController
       end
     end
 
-    def rent
-      @product = Product.find(params[:id])
-
-      if current_user
-        @product.status = 'Reservado'
-        @product.reserve_id = current_user.id
-        @product.save
-
-        Reserve.create(:product_id => @product.id, :user_id => current_user.id)
-      end
-
-      respond_to do |format|
-          format.json { render json: @product }
-      end
-    end
-
     private
         def product_params
-            params.require(:product).permit(:name, :price, :quantity, :user_id, :status, :reserve_id)
+            params.require(:product).permit(:name, :price, :quantity, :user_id)
         end
 end

@@ -18,7 +18,7 @@ class ProductsController < ApplicationController
     end
 
     def show
-        @product = Product.find(id)
+        @product = Product.find(params[:id])
 
         respond_to do |format|
             format.json { render json: @product }

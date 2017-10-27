@@ -37,6 +37,10 @@ angular
                 templateUrl: '/templates/product/rent.html',
                 controller: 'ProductRentCtrl'
             })
+            .when('/provide/:id', {
+                templateUrl: '/templates/product/provide.html',
+                controller: 'ProductProvideCtrl'
+            })
     }])
     .controller('HomeCtrl', ['$scope', 'Home', function($scope, Home){
         $scope.name = '';
@@ -130,6 +134,12 @@ angular
         $location.path('/products/list_all');
 
     }])
+    .controller('ProductProvideCtrl', ['$scope', 'ProductProvide', '$routeParams', '$location', function($scope, Product, $routeParams, $location){
+        $scope.product = Product.get({ id: $routeParams.id });
+
+        $location.path('/products');
+
+    }])
     .factory('Products', ['$resource', function($resource){
         return $resource('/products.json', {}, {
             create: { method: 'POST' },
@@ -154,6 +164,12 @@ angular
     }])
     .factory('Productrent', ['$resource', function($resource){
         return $resource('/rent/:id.json', {}, {
+            update: { method: 'PUT', params: { id: '@id' } },
+            delete: { method: 'DELETE', params: { id: '@id' } }
+        });
+    }])
+    .factory('ProductProvide', ['$resource', function($resource){
+        return $resource('/provide/:id.json', {}, {
             update: { method: 'PUT', params: { id: '@id' } },
             delete: { method: 'DELETE', params: { id: '@id' } }
         });

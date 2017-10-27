@@ -20,7 +20,13 @@
           <td>{{product.price}}</td>
           <td>{{product.quantity}}</td>
           <td>{{product.status}}</td>
-          <td><span ng-if="IsLoading(product.status)"><a class="btn btn-default" href="/#!/rent/{{product.id}}">Alugar</a></span> </td>
+          <td>
+            <span ng-if="IsLoading(product.status)">
+              <a class="btn btn-default" href="/#!/rent/{{product.id}}">
+                Alugar
+              </a>
+            </span>
+          </td>
       </tr>
     </table>
   </div>

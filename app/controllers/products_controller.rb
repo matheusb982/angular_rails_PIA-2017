@@ -42,6 +42,22 @@ class ProductsController < ApplicationController
        end
      end
 
+     def provide
+        @product = Product.find(params[:id])
+
+        if current_user
+
+          @product.status = 'Disponivel'
+          @product.reserve_id = ''
+          @product.date_reserve = ''
+          @product.save
+        end
+
+        respond_to do |format|
+            format.json { render json: @product }
+        end
+      end
+
     def show
         @product = Product.find(params[:id])
 

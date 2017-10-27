@@ -31,6 +31,9 @@
               </button> |
               <button type="button" data-ng-click="edit(product.id)">Editar</button>
             </span>
+            <span ng-if="!IsLoading(product.status)">
+              <a class="btn btn-default" href="/#!/provide/{{product.id}}">Disponibilizar</a>
+            </span>
           </td>
       </tr>
     </table>

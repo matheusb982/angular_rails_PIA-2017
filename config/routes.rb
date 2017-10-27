@@ -15,4 +15,6 @@ Rails.application.routes.draw do
 
   get 'rent/:id' => 'products#rent'
 
+  get 'provide/:id' => 'products#provide'
+
 end

@@ -8,6 +8,6 @@ Tecnologias utilizadas:
 * Ruby 2.4.1
 * Rails 5.1.4
 * PostgreSQL
-* angularjs-rails
+* Angular 2 
 
 Online Application: <a href="https://damp-gorge-34981.herokuapp.com/#!/" target="_blank">https://damp-gorge-34981.herokuapp.com/</a>

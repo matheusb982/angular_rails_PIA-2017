@@ -3,7 +3,7 @@ class HomeController < ApplicationController
     end
 
     def hello
-        @str = { txt: 'Hello', name: 'Leonan' }
+        @str = { txt: 'Olá', name: 'Leonan' }
 
         respond_to do |format|
             format.json { render json: @str }
